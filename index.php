@@ -7,13 +7,17 @@
 <body>
 
 	<h1>
-		<?php echo "Hello World Heading"; ?>
+
+		<?php 
+
+			$greeting = "Hello";
+
+			echo "$greeting Everybody!";
+
+
+		 ?>
+
 	</h1>
-	<p>
-		
-		<?php echo "I am learning to code in php!! Hurrey..." ?>
 
-
-	</p>
 </body>
 </html>
