@@ -5,39 +5,27 @@
 	<title></title>
 </head>
 <style type="text/css">
-	
-	body {
-
-	    display: grid;
-	    place-items: center;
-	    height: 100vh;
-	    font-family: sans-serif;
-	    margin: 0
-	}
 
 </style>
 <body>
 
 	<?php 
 
-		$name = '"Dark Matter"';
-		$read = false;
+		$books = [
 
-		if ($read){
+			'Biology',
+			'Chemistry',
+			'Physics'
+		];
 
-			$message = "You have read $name.";
-		} else {
+    ?>
+	<h1>Recommended Books</h1>
 
-			$message = "You have NOT read $name.";
-		}
-
-	 ?>
-
-	<h1>
-
-		<?= $message ?>
-
-	</h1>
+	<ul>
+		<?php foreach($books as $book) : ?>
+			<li><?= $book; ?></li>
+		<?php endforeach; ?>
+	</ul>
 
 </body>
 </html>
