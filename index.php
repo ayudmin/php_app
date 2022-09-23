@@ -13,19 +13,43 @@
 
 		$books = [
 
-			'Biology',
-			'Chemistry',
-			'Physics'
+			[
+				"name" => "Biology",
+				"category" => "Science",
+				"yearReleased" => "1902",
+				"purchaseUrl" => "http.example.com"
+
+			],
+
+			[
+				"name" => "History",
+				"category" => "Arts",
+				"yearReleased" => "1902",
+				"purchaseUrl" => "http.example.com"
+
+			]
 		];
 
     ?>
 	<h1>Recommended Books</h1>
 
-	<ul>
-		<?php foreach($books as $book) : ?>
-			<li><?= $book; ?></li>
-		<?php endforeach; ?>
-	</ul>
+	<?php foreach ($books as $book) : ?>
+
+		<ul>
+
+			<a href="<?= $book['purchaseUrl'] ?>">
+				<?= $book['name'] ?>
+			</a>
+			<p>
+				<?= $book['category'] ?>
+			</p>
+			<p>
+				<?= $book['yearReleased'] ?>
+			</p>
+			
+		</ul>
+
+	<?php endforeach; ?>
 
 </body>
 </html>
