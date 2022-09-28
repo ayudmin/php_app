@@ -27,29 +27,50 @@
 				"yearReleased" => "1902",
 				"purchaseUrl" => "http.example.com"
 
-			]
-		];
+			],
+
+			[
+				"name" => "Mathematics",
+				"category" => "Science",
+				"yearReleased" => "1902",
+				"purchaseUrl" => "http.example.com"
+
+			],
+
+		]; 	
+
+		function filterByCategory($books, $category){
+
+			$filteredByCategory = [];
+
+			foreach($books as $book){
+
+				if ($book['category'] ===  $category){
+
+					$filteredByCategory[] = $book;
+				}
+
+			}
+
+			return $filteredByCategory;
+
+		}		
 
     ?>
-	<h1>Recommended Books</h1>
 
-	<?php foreach ($books as $book) : ?>
-
+  	<h1>Recommended Books</h1>
 		<ul>
-
-			<a href="<?= $book['purchaseUrl'] ?>">
-				<?= $book['name'] ?>
-			</a>
-			<p>
-				<?= $book['category'] ?>
-			</p>
-			<p>
-				<?= $book['yearReleased'] ?>
-			</p>
-			
+			<?php foreach (filterByCategory($books, 'Science') as $book) : ?>
+				<li>
+					<a href="<?= $book['purchaseUrl'] ?>">
+						<?= $book['name'] ?>
+					</a>
+					<p> Categor: <?= $book['category'] ?>
+					</p>
+					<p> Year released: <?= $book['yearReleased'] ?>
+					</p>
+				</li>
+			<?php endforeach; ?>
 		</ul>
-
-	<?php endforeach; ?>
-
 </body>
 </html>
