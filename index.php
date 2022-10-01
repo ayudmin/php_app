@@ -39,26 +39,10 @@
 
 		]; 	
 
-		function filter($items, $fn){
 
-			$filtereditems = [];
+		$filteredbooks = array_filter($books, function ($book) {
 
-			foreach($items as $item){
-
-				if ($fn($item)){
-
-					$filtereditems[] = $item;
-				}
-
-			}
-
-			return $filtereditems;
-
-		}	
-
-		$filteredbooks = filter($books, function ($book) {
-
-			return $book['yearReleased'] < 2000;
+			return $book['category'] === 'Science';
 
 		});
 
