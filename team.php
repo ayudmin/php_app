@@ -1,6 +1,6 @@
 <?php 
 
 
-require 'team.view.php';
+require 'views/team.view.php';
 
 
