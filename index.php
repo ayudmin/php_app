@@ -7,10 +7,11 @@ require "Database.php";
 
 // require "router.php";
 
+$config = require('config.php');
 
-$db = new Databse();
+$db = new Databse($config['database']);
 
-$post = $db->query('select * from posts where id = 7');
+$posts = $db->query('select * from posts')->fetchAll();
 
-dd($post);
+dd($posts);
 
