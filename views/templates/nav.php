@@ -12,6 +12,8 @@
 
 	              <a href="/projects" class="<?= $_SERVER['REQUEST_URI'] === '/projects' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
 
+	              <a href="/notes" class="<?= $_SERVER['REQUEST_URI'] === '/notes' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
+
 	              <a href="/reports" class="<?= $_SERVER['REQUEST_URI'] === '/reports' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
 	            </div>
 	          </div>
