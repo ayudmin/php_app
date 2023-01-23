@@ -4,6 +4,7 @@
 class Databse {
 
     public $connection;
+    public $statement;
     public function __construct($config, $username = 'francis', $password = 'mansnothot')
     {
 
@@ -17,11 +18,16 @@ class Databse {
 
     public function query($query, $params = [])
     {
-        $statement = $this->connection->prepare($query);
+        $this->statement = $this->connection->prepare($query);
 
-        $statement->execute($params);
+        $this->statement->execute($params);
 
         return $this;
+    }
+
+    public function fetch()
+    {
+        // code...
     }
 }
 
