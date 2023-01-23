@@ -25,9 +25,21 @@ class Databse {
         return $this;
     }
 
-    public function fetch()
+    public function find()
     {
         return $this->statement->fetch();
     }
+
+    public function findOrFail($value='')
+    {
+        $result = $this->find();
+        if (! $result){
+            abort();
+        }
+        return $result;
+    }
 }
+
+
+
 
