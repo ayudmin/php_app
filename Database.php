@@ -21,7 +21,7 @@ class Databse {
 
         $statement->execute($params);
 
-        return $statement;
+        return $this;
     }
 }
 
