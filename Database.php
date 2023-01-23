@@ -25,6 +25,12 @@ class Databse {
         return $this;
     }
 
+    public function get()
+    {
+        return $this->statement->fetchAll();
+    }
+
+
     public function find()
     {
         return $this->statement->fetch();
@@ -38,7 +44,8 @@ class Databse {
         }
         return $result;
     }
-}
+
+   }
 
 
 
