@@ -27,7 +27,7 @@ class Databse {
 
     public function fetch()
     {
-        // code...
+        return $this->statement->fetch();
     }
 }
 
