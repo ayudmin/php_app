@@ -4,8 +4,11 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <form>
-            <textarea name="body"></textarea>
+        <form method="POST">
+            <label for="body">Description</label>
+            <div>
+                <textarea  id="body" name="body"></textarea>
+            </div>
             <p>
                 <button type="submit">Create Post</button>
             </p>
