@@ -13,7 +13,10 @@
                     <div>
                       <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
                       <div class="mt-1">
-                        <textarea id="body" name="body" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Your text goes here..." required></textarea>
+                        <textarea id="body" name="body" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Your text goes here..." required><?= isset($_POST['body']) ? $_POST['body'] : '' ?></textarea>
+                        <?php if (isset($errors['body'])) : ?>
+                            <p class="text-red-500 text-sm mt-2"><?= $errors['body'] ?></p>
+                        <?php endif; ?>
                       </div>
                     </div>
                   </div>
