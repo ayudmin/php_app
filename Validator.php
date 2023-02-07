@@ -4,6 +4,6 @@ class Validator
 {
     public function string($value)
     {
-        return strlen($value) === 0;
+        return strlen(trim($value)) === 0;
     }
 }
