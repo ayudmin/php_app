@@ -1,13 +1,16 @@
 <?php
 
-$config = require('config.php');
+require 'Validator.php';
+
+$config = require 'config.php';
 $db = new Databse($config['database']);
 
 $heading = "Create Note";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $errors = [];
-    if (strlen($_POST['body']) === 0) {
+    $validator = new Validator();
+    if ($validator->string($_POST['body'])) {
         $errors['body'] = 'A body text is required';
     }
     if (strlen($_POST['body']) > 1000) {
