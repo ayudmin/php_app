@@ -7,6 +7,11 @@ $db = new Databse($config['database']);
 
 $heading = "Create Note";
 
+if (! Validator::email('done@gmail.com')){
+    dd('Not a valid email');
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $errors = [];
     if (! Validator::string($_POST['body'], 1 , 1000)) {
