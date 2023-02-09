@@ -1,7 +1,7 @@
 <?php
 
 
-class Databse {
+class Database {
 
     public $connection;
     public $statement;

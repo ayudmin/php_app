@@ -2,6 +2,7 @@
 
 $heading = "Reports";
 
-require base_path('views/reports.view.php');
-
+view('reports.view.php', [
+    'heading' => $heading
+]);
 
