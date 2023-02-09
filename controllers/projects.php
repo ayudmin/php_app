@@ -2,6 +2,6 @@
 
 $heading = "Projects";
 
-require 'views/projects.view.php';
+require base_path('views/projects.view.php');
 
 

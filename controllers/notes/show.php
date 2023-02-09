@@ -1,6 +1,6 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 
 $db = new Databse($config['database']);
 
@@ -13,6 +13,6 @@ $note = $db->query('select * from notes where  id = :id', [
 
 authorize($note['user_id'] === $currentUser);
 
-require 'views/notes/show.view.php';
+require base_path('views/notes/show.view.php');
 
 
