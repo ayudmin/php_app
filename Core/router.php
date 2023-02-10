@@ -1,8 +1,5 @@
 <?php 
 
-namespace Core;
-
-
 function routeTocontroller ($uri, $routes)
 {
 	if (array_key_exists($uri, $routes))
