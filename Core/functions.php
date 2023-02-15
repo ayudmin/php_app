@@ -14,6 +14,13 @@ function urlIs($value)
 	require $_SERVER['REQUEST_URI'] === $value;
 }
 
+function abort($code = 404)
+{
+	http_response_code($code);
+	require base_path("views/templates/{$code}.php");
+	die();
+}
+
 function authorize($conditon)
 {
 	if(! $conditon){
