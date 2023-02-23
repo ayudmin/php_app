@@ -1,8 +1,8 @@
 <?php
-
+use Core\App;
 use Core\Database;
 
-$db = App::container()->resolve(Database::class);
+$db = App::resolve(Database::class);
 $currentUser = 1;
 $heading = "Note";
 
