@@ -7,7 +7,7 @@ use Core\Validator;
 $heading = "Update Note";
 $errors = [];
 $db = App::resolve(Database::class);
-$currentUser = 4;
+$currentUser = 1;
 
 $note = $db->query('select * from notes where  id = :id', [
         'id'=> $_POST['id']
