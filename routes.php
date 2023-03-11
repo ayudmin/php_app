@@ -15,5 +15,5 @@ $router->delete('/note', 'controllers/notes/destroy.php');
 $router->delete('/note', 'controllers/notes/destroy.php');
 
 
-$router->get('/register', 'controllers/registration/create.php');
+$router->get('/register', 'controllers/registration/create.php')->only('guest');
 $router->post('/register', 'controllers/registration/store.php');
