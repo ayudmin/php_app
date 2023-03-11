@@ -3,7 +3,7 @@ use Core\App;
 use Core\Database;
 
 $db = App::resolve(Database::class);
-$currentUser = 1;
+$currentUser = $_SESSION['user'];
 $heading = "Note";
 
 $note = $db->query('select * from notes where  id = :id', [
