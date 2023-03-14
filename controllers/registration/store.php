@@ -24,13 +24,13 @@ $result = $db->query('select * from users where email = :email', [
     'email' => $email
 ])->find();
 
-if($user){
+if($result){
     header('location: /');
     exit();
 } else {
     $db->query("INSERT INTO users(email, password) VALUES(:email, :password)", [
-        'email' => $_POST['email'],
-        'password' => $_POST['password']
+        'email' => $email,
+        'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
     $_SESSION['user'] = [
         'email' => $email
