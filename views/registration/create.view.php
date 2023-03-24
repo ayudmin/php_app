@@ -6,7 +6,7 @@
   <div class="w-full max-w-md space-y-8">
     <div>
       <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Register for an account</h2>
     </div>
     <form class="mt-8 space-y-6" action="/register" method="POST">
       <input type="hidden" name="remember" value="true">
@@ -15,7 +15,7 @@
           <label for="email" class="sr-only">Email address</label>
           <input id="email" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Email address">
           <?php if (isset($errors['email'])) : ?>
-            <p class="text-red-500 text-sm mt-2"><?= $errors['email'] ?></p>
+            <p class="text-red-500 text-sm mt-2 mb-2"><?= $errors['email'] ?></p>
           <?php endif; ?>
         </div>
         <div>

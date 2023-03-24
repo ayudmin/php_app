@@ -32,9 +32,11 @@ if($result){
         'email' => $email,
         'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
-    $_SESSION['user'] = [
+
+    login([
         'email' => $email
-    ];
+    ]);
+
     header('location: /');
     exit();
 }
