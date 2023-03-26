@@ -5,22 +5,27 @@
 	          <div class="flex-shrink-0">
 	            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
 	          </div>
+	          <a href="/" class="<?= $_SERVER['REQUEST_URI'] === '/' ? 'text-white' : 'text-gray-300' ?> hover:text-white px-3 py-2 rounded-md font-medium">
+	          Madmin
+	      	  </a>
 	          <div class="hidden md:block">
 	            <div class="ml-10 flex items-baseline space-x-4">
 	              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+	              <?php if ($_SESSION['user'] ?? false) : ?>
 	              <a href="/" class="<?= $_SERVER['REQUEST_URI'] === '/' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
 
 	              <a href="/projects" class="<?= $_SERVER['REQUEST_URI'] === '/projects' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-	              <?php if ($_SESSION['user'] ?? false) : ?>
 	              	  <a href="/notes" class="<?= $_SERVER['REQUEST_URI'] === '/notes' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
-          		  <?php endif; ?>
+          		  
 
 	              <a href="/reports" class="<?= $_SERVER['REQUEST_URI'] === '/reports' ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+	              <?php endif; ?>
 	            </div>
 	          </div>
 	        </div>
 	        <div class="hidden md:block">
 	          <div class="ml-4 flex items-center md:ml-6">
+          	<?php if ($_SESSION['user'] ?? false) : ?>
 	            <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
 	              <span class="sr-only">View notifications</span>
 	              <!-- Heroicon name: outline/bell -->
@@ -28,7 +33,7 @@
 	                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
 	              </svg>
 	            </button>
-
+            <?php endif; ?>
 	            <!-- Profile dropdown -->
 	            <div class="relative ml-3">
 	              <div class="flex">
